@@ -1,0 +1,15 @@
+#[37577.597324] hub 1-1.1:1.0: USB hub found
+#[37577.597616] hub 1-1.1:1.0: 3 ports detected
+#[37577.870070] usb 1-1.1.1: new full-speed USB device number 12 using ehci_hcd
+#[37577.964773] usb 1-1.1.1: New USB device found, idVendor=0472, idProduct=0065
+#[37577.964778] usb 1-1.1.1: New USB device strings: Mfr=3, Product=4, SerialNumber=0
+#[37577.964782] usb 1-1.1.1: Product: PFU-65 USB Keyboard
+#[37577.964785] usb 1-1.1.1: Manufacturer: Chicony 
+#[37577.967449] input: Chicony  PFU-65 USB Keyboard as /devices/pci0000:00/0000:00:1a.0/usb1/1-1/1-1.1/1-1.1.1/1-1.1.1:1.0/input/input19
+#[37577.967645] hid-generic 0003:0472:0065.0005: input,hidraw0: USB HID v1.00 Keyboard [Chicony  PFU-65 USB Keyboard] on usb-0000:00:1a.0-1.1.1/input0
+
+
+
+
+SUBSYSTEM=="input", ACTION=="add", SUBSYSTEMS=="usb", ATTRS{idVendor}=="0472", ATTRS{idProduct}=="0065", RUN+="/home/seb/bin/set-keyboard-layout-udev.sh us"
+#SUBSYSTEM=="input", ACTION=="remove", SUBSYSTEMS=="usb", ATTRS{idVendor}=="0472", ATTRS{idProduct}=="0065", RUN+="/home/seb/bin/set-keyboard-layout.sh fr"
